@@ -1,4 +1,4 @@
-package uml.main;
+package main.java.uml.main;
 
 
 /**

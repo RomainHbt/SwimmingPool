@@ -1,4 +1,4 @@
-package uml.main.resource;
+package main.java.uml.main.resource;
 
 
 /**
@@ -29,18 +29,5 @@ public class Basket implements Resource
 		// TODO implement me
 		return "";	
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public String description() {
-		// TODO implement me
-		return "";	
-	}
-	
 }
 

@@ -1,5 +1,5 @@
-package uml.main.resource.pool;
-import uml.main.resource.Cubicle;
+package main.java.uml.main.resource.pool;
+import main.java.uml.main.resource.Cubicle;
 
 
 /**
@@ -15,8 +15,8 @@ public class CubiclePool extends ResourcePool
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public CubiclePool(){
-		super();
+	public CubiclePool(int length){
+		super(length);
 	}
 
 	/**

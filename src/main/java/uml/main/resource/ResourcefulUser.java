@@ -1,4 +1,4 @@
-package uml.main.resource;
+package main.java.uml.main.resource;
 
 
 /**
@@ -7,7 +7,7 @@ package uml.main.resource;
  * @generated
  */
 
-public class ResourcefulUser
+public class ResourcefulUser<R extends Resource>
 {
 	/**
 	 * <!-- begin-user-doc -->

@@ -1,5 +1,5 @@
-package uml.main.resource.pool;
-import uml.main.resource.Basket;
+package main.java.uml.main.resource.pool;
+import main.java.uml.main.resource.Basket;
 
 
 /**
@@ -15,8 +15,8 @@ public class BasketPool extends ResourcePool
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public BasketPool(){
-		super();
+	public BasketPool(int length){
+		super(length);
 	}
 
 	/**

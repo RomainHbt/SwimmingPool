@@ -1,6 +1,6 @@
-package uml.main.swimmer;
-import uml.main.resource.pool.BasketPool;
-import uml.main.resource.pool.CubiclePool;
+package main.java.uml.main.swimmer;
+import main.java.uml.main.resource.pool.BasketPool;
+import main.java.uml.main.resource.pool.CubiclePool;
 
 
 /**

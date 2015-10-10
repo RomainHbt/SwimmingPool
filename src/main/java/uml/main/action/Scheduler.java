@@ -1,4 +1,6 @@
-package uml.main.action;
+package main.java.uml.main.action;
+
+import java.util.List;
 
 
 /**
@@ -27,7 +29,7 @@ public class Scheduler extends Action
 	 */
 	
 	public Scheduler() {
-		super();
+		super(0);
 		// TODO construct me	
 	}
 	

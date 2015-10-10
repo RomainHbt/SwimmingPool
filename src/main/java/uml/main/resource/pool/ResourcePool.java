@@ -1,4 +1,8 @@
-package uml.main.resource.pool;
+package main.java.uml.main.resource.pool;
+
+import java.util.List;
+
+import main.java.uml.main.resource.Resource;
 
 
 /**
@@ -7,7 +11,7 @@ package uml.main.resource.pool;
  * @generated
  */
 
-public class ResourcePool
+public abstract class ResourcePool<R extends Resource>
 {
 	/**
 	 * <!-- begin-user-doc -->

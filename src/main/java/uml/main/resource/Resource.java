@@ -1,4 +1,4 @@
-package uml.main.resource;
+package main.java.uml.main.resource;
 
 
 
@@ -16,7 +16,7 @@ public  interface Resource
 	 * @ordered
 	 */
 	
-	public description() ;
+	public String description() ;
 	
 	
 }

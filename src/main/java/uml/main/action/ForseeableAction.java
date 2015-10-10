@@ -1,4 +1,4 @@
-package uml.main.action;
+package main.java.uml.main.action;
 
 
 /**
@@ -33,7 +33,7 @@ public class ForseeableAction extends Action
 	 * @generated
 	 */
 	public ForseeableAction(){
-		super();
+		super(0);
 	}
 
 }
