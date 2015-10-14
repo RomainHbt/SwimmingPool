@@ -48,12 +48,6 @@ public class Scheduler extends Action
 		if(this.actions.isEmpty()){
 			throw new ActionFinishedException();
 		}
-		Action toDo = this.actions.get(0);
-		toDo.doStep();
-		
-		if(toDo.isFinished()){
-			this.actions.remove(0);
-		}
 	}
 	
 	/**
@@ -75,7 +69,7 @@ public class Scheduler extends Action
 	 */
 	
 	public boolean isInProgress() {
-		return this.isInProgress();
+		return super.isInProgress();
 	}
 	
 	/**

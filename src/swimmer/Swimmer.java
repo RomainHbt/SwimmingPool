@@ -74,8 +74,7 @@ public class Swimmer
 	 */
 	
 	public Swimmer(String name, BasketPool bA, CubiclePool cA, int undressTime, int bathTime, int dressTime) {
-		super();
-		// TODO construct me	
+		
 	}
 	
 }

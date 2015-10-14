@@ -47,4 +47,11 @@ public class ActionTest {
 		assertFalse(a.isInProgress());
 		assertTrue(a.isFinished());
 	}
+	
+	@Test(expected=ActionFinishedException.class)
+	public void getActionFinishedException() throws ActionFinishedException {
+		Action a = createAction(1);
+		a.doStep();
+		a.doStep();
+	}
 }

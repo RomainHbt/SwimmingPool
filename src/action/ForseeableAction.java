@@ -18,7 +18,7 @@ public class ForseeableAction extends Action
 	 * @ordered
 	 */
 	
-	protected int remainingTime;
+	private int remainingTime;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ public class ForseeableAction extends Action
 	 * @ordered
 	 */
 	
-	protected int totalTime;
+	private int totalTime;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,6 +50,8 @@ public class ForseeableAction extends Action
 
 	public void doStep() throws ActionFinishedException{
 		super.doStep();
+		if(this.remainingTime == 0)
+			throw new ActionFinishedException();
 		this.remainingTime--;
 	}
 	
