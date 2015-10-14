@@ -1,5 +1,4 @@
-package main.java.uml.main.resource.pool;
-import main.java.uml.main.resource.Basket;
+package action;
 
 
 /**
@@ -8,15 +7,15 @@ import main.java.uml.main.resource.Basket;
  * @generated
  */
 
-public class BasketPool extends ResourcePool
+public class FairScheduler extends Scheduler
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public BasketPool(int length){
-		super(length);
+	public FairScheduler(){
+		super();
 	}
 
 	/**
@@ -26,9 +25,8 @@ public class BasketPool extends ResourcePool
 	 * @ordered
 	 */
 	
-	protected Basket getType() {
-		// TODO implement me
-		return null;	
+	public void doStep() {
+		// TODO implement me	
 	}
 	
 }

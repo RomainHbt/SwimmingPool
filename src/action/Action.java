@@ -1,6 +1,4 @@
-package main.java.uml.main.swimmer;
-import main.java.uml.main.resource.pool.BasketPool;
-import main.java.uml.main.resource.pool.CubiclePool;
+package action;
 
 
 /**
@@ -9,7 +7,7 @@ import main.java.uml.main.resource.pool.CubiclePool;
  * @generated
  */
 
-public class Swimmer
+public abstract class Action
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -18,7 +16,7 @@ public class Swimmer
 	 * @ordered
 	 */
 	
-	private String name;
+	protected boolean isReady;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -27,43 +25,7 @@ public class Swimmer
 	 * @ordered
 	 */
 	
-	private BasketPool basketAdministrator;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private CubiclePool cubicleAdministrator;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int undressTime;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int bathTime;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int dressTime;
+	protected boolean isInitialized;
 	
 
 	/**
@@ -73,9 +35,56 @@ public class Swimmer
 	 * @ordered
 	 */
 	
-	public Swimmer(String name, BasketPool bA, CubiclePool cA, int undressTime, int bathTime, int dressTime) {
+	public Action(int timeToEnd) {
 		super();
 		// TODO construct me	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public boolean isReady() {
+		// TODO implement me
+		return false;	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public boolean isInProgress() {
+		// TODO implement me
+		return false;	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public boolean isFinished() {
+		// TODO implement me
+		return false;	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public void doStep() {
+		// TODO implement me	
 	}
 	
 }

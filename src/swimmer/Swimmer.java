@@ -1,4 +1,6 @@
-package main.java.uml.main.action;
+package swimmer;
+import pool.BasketPool;
+import pool.CubiclePool;
 
 
 /**
@@ -7,7 +9,7 @@ package main.java.uml.main.action;
  * @generated
  */
 
-public abstract class Action
+public class Swimmer
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -16,7 +18,7 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	protected boolean isReady;
+	private String name;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -25,7 +27,43 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	protected boolean isInitialized;
+	private BasketPool basketAdministrator;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private CubiclePool cubicleAdministrator;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private int undressTime;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private int bathTime;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private int dressTime;
 	
 
 	/**
@@ -35,56 +73,9 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	public Action(int timeToEnd) {
+	public Swimmer(String name, BasketPool bA, CubiclePool cA, int undressTime, int bathTime, int dressTime) {
 		super();
 		// TODO construct me	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public boolean isReady() {
-		// TODO implement me
-		return false;	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public boolean isInProgress() {
-		// TODO implement me
-		return false;	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public boolean isFinished() {
-		// TODO implement me
-		return false;	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public void doStep() {
-		// TODO implement me	
 	}
 	
 }

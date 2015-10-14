@@ -1,4 +1,4 @@
-package main.java.uml.main.resource;
+package resource;
 
 
 /**
@@ -7,14 +7,14 @@ package main.java.uml.main.resource;
  * @generated
  */
 
-public class Basket implements Resource
+public class Cubicle implements Resource
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Basket(){
+	public Cubicle(){
 		super();
 	}
 
@@ -29,5 +29,6 @@ public class Basket implements Resource
 		// TODO implement me
 		return "";	
 	}
+	
 }
 

@@ -1,5 +1,5 @@
-package main.java.uml.main.resource.pool;
-import main.java.uml.main.resource.Cubicle;
+package pool;
+import resource.Basket;
 
 
 /**
@@ -8,14 +8,14 @@ import main.java.uml.main.resource.Cubicle;
  * @generated
  */
 
-public class CubiclePool extends ResourcePool
+public class BasketPool extends ResourcePool
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public CubiclePool(int length){
+	public BasketPool(int length){
 		super(length);
 	}
 
@@ -26,7 +26,7 @@ public class CubiclePool extends ResourcePool
 	 * @ordered
 	 */
 	
-	protected Cubicle getType() {
+	protected Basket getType() {
 		// TODO implement me
 		return null;	
 	}

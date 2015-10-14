@@ -1,4 +1,5 @@
-package main.java.uml.main.action;
+package resource;
+
 
 
 /**
@@ -6,17 +7,17 @@ package main.java.uml.main.action;
  * <!--  end-user-doc  -->
  * @generated
  */
-
-public class FreeResourceAction extends ForseeableAction
+public  interface Resource 
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
+	 * @ordered
 	 */
-	public FreeResourceAction(){
-		super();
-	}
-
+	
+	public String description() ;
+	
+	
 }
 

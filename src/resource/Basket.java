@@ -1,4 +1,4 @@
-package main.java.uml.main.action;
+package resource;
 
 
 /**
@@ -7,14 +7,14 @@ package main.java.uml.main.action;
  * @generated
  */
 
-public class SequentialScheduler extends Scheduler
+public class Basket implements Resource
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public SequentialScheduler(){
+	public Basket(){
 		super();
 	}
 
@@ -25,9 +25,9 @@ public class SequentialScheduler extends Scheduler
 	 * @ordered
 	 */
 	
-	public void doStep() {
-		// TODO implement me	
+	public String description() {
+		// TODO implement me
+		return "";	
 	}
-	
 }
 

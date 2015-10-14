@@ -1,4 +1,4 @@
-package main.java.uml.main.resource;
+package action;
 
 
 /**
@@ -7,14 +7,14 @@ package main.java.uml.main.resource;
  * @generated
  */
 
-public class Cubicle implements Resource
+public class SequentialScheduler extends Scheduler
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Cubicle(){
+	public SequentialScheduler(){
 		super();
 	}
 
@@ -25,9 +25,8 @@ public class Cubicle implements Resource
 	 * @ordered
 	 */
 	
-	public String description() {
-		// TODO implement me
-		return "";	
+	public void doStep() {
+		// TODO implement me	
 	}
 	
 }

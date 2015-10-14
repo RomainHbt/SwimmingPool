@@ -1,4 +1,5 @@
-package main.java.uml.main.action;
+package pool;
+import resource.Cubicle;
 
 
 /**
@@ -7,15 +8,15 @@ package main.java.uml.main.action;
  * @generated
  */
 
-public class FairScheduler extends Scheduler
+public class CubiclePool extends ResourcePool
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public FairScheduler(){
-		super();
+	public CubiclePool(int length){
+		super(length);
 	}
 
 	/**
@@ -25,8 +26,9 @@ public class FairScheduler extends Scheduler
 	 * @ordered
 	 */
 	
-	public void doStep() {
-		// TODO implement me	
+	protected Cubicle getType() {
+		// TODO implement me
+		return null;	
 	}
 	
 }

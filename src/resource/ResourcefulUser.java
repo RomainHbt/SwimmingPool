@@ -1,8 +1,4 @@
-package main.java.uml.main.resource.pool;
-
-import java.util.List;
-
-import main.java.uml.main.resource.Resource;
+package resource;
 
 
 /**
@@ -11,7 +7,7 @@ import main.java.uml.main.resource.Resource;
  * @generated
  */
 
-public abstract class ResourcePool<R extends Resource>
+public class ResourcefulUser<R extends Resource>
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -20,17 +16,16 @@ public abstract class ResourcePool<R extends Resource>
 	 * @ordered
 	 */
 	
-	protected List<R> resources;
+	protected R resource;
 	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
-	 * @ordered
 	 */
-	
-	protected List<R> provideRes;
-	
+	public ResourcefulUser(){
+		super();
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -39,28 +34,7 @@ public abstract class ResourcePool<R extends Resource>
 	 * @ordered
 	 */
 	
-	public ResourcePool(int length) {
-		super();
-		// TODO construct me	
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	protected abstract R getType() ;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public R provideResource() {
+	public R getResource() {
 		// TODO implement me
 		return null;	
 	}
@@ -72,7 +46,18 @@ public abstract class ResourcePool<R extends Resource>
 	 * @ordered
 	 */
 	
-	public void freeResource(R r) {
+	public void setResource(Resource resource) {
+		// TODO implement me	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public void resetResource() {
 		// TODO implement me	
 	}
 	
