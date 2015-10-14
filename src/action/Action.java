@@ -1,5 +1,7 @@
 package action;
 
+import exceptions.ActionFinishedException;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +18,7 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	protected boolean isReady;
+	private boolean isReady;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -25,7 +27,7 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	protected boolean isInitialized;
+	private boolean isInitialized;
 	
 
 	/**
@@ -35,9 +37,9 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	public Action(int timeToEnd) {
-		super();
-		// TODO construct me	
+	public Action() {
+		this.isReady = true;
+		this.isInitialized = true;
 	}
 	
 	/**
@@ -48,8 +50,7 @@ public abstract class Action
 	 */
 	
 	public boolean isReady() {
-		// TODO implement me
-		return false;	
+		return this.isInitialized && this.isReady;
 	}
 	
 	/**
@@ -60,8 +61,7 @@ public abstract class Action
 	 */
 	
 	public boolean isInProgress() {
-		// TODO implement me
-		return false;	
+		return this.isInitialized && !this.isReady() && !this.isFinished();
 	}
 	
 	/**
@@ -71,20 +71,18 @@ public abstract class Action
 	 * @ordered
 	 */
 	
-	public boolean isFinished() {
-		// TODO implement me
-		return false;	
-	}
+	public abstract boolean isFinished();
 	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
+	 * @throws ActionFinishedException 
 	 * @generated
 	 * @ordered
 	 */
 	
-	public void doStep() {
-		// TODO implement me	
+	public void doStep() throws ActionFinishedException {
+		this.isReady = false;
 	}
 	
 }

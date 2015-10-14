@@ -14,8 +14,8 @@ public class TakeResourceAction extends ForseeableAction
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public TakeResourceAction(){
-		super();
+	public TakeResourceAction(int timeToEnd){
+		super(timeToEnd);
 	}
 
 }

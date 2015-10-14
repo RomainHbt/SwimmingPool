@@ -14,8 +14,8 @@ public class FreeResourceAction extends ForseeableAction
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public FreeResourceAction(){
-		super();
+	public FreeResourceAction(int timeToEnd){
+		super(timeToEnd);
 	}
 
 }

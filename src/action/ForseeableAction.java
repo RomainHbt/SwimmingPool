@@ -1,5 +1,7 @@
 package action;
 
+import exceptions.ActionFinishedException;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -32,8 +34,27 @@ public class ForseeableAction extends Action
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public ForseeableAction(){
-		super(0);
+	public ForseeableAction(int timeToEnd){
+		super();
+		this.totalTime = timeToEnd;
+		this.remainingTime = timeToEnd;
+	}
+	
+	public int getRemainingTime() {
+		return remainingTime;
+	}
+
+	public int getTotalTime() {
+		return totalTime;
+	}
+
+	public void doStep() throws ActionFinishedException{
+		super.doStep();
+		this.remainingTime--;
+	}
+	
+	public boolean isFinished(){
+		return this.remainingTime == 0;
 	}
 
 }

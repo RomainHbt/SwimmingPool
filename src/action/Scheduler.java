@@ -1,6 +1,9 @@
 package action;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import exceptions.ActionFinishedException;
 
 
 /**
@@ -29,8 +32,8 @@ public class Scheduler extends Action
 	 */
 	
 	public Scheduler() {
-		super(0);
-		// TODO construct me	
+		super();
+		this.actions = new ArrayList<>();
 	}
 	
 	/**
@@ -40,8 +43,17 @@ public class Scheduler extends Action
 	 * @ordered
 	 */
 	
-	public void doStep() {
-		// TODO implement me	
+	public void doStep() throws ActionFinishedException{
+		super.doStep();
+		if(this.actions.isEmpty()){
+			throw new ActionFinishedException();
+		}
+		Action toDo = this.actions.get(0);
+		toDo.doStep();
+		
+		if(toDo.isFinished()){
+			this.actions.remove(0);
+		}
 	}
 	
 	/**
@@ -52,8 +64,7 @@ public class Scheduler extends Action
 	 */
 	
 	public boolean isReady() {
-		// TODO implement me
-		return false;	
+		return super.isReady();	
 	}
 	
 	/**
@@ -64,8 +75,7 @@ public class Scheduler extends Action
 	 */
 	
 	public boolean isInProgress() {
-		// TODO implement me
-		return false;	
+		return this.isInProgress();
 	}
 	
 	/**
@@ -76,8 +86,7 @@ public class Scheduler extends Action
 	 */
 	
 	public boolean isFinished() {
-		// TODO implement me
-		return false;	
+		return this.actions.isEmpty();
 	}
 	
 	/**
@@ -88,7 +97,7 @@ public class Scheduler extends Action
 	 */
 	
 	public void addAction(Action a) {
-		// TODO implement me	
+		this.actions.add(a);
 	}
 	
 }
