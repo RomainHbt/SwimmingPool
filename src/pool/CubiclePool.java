@@ -8,7 +8,7 @@ import resource.Cubicle;
  * @generated
  */
 
-public class CubiclePool extends ResourcePool
+public class CubiclePool extends ResourcePool<Cubicle>
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -26,9 +26,8 @@ public class CubiclePool extends ResourcePool
 	 * @ordered
 	 */
 	
-	protected Cubicle getType() {
-		// TODO implement me
-		return null;	
+	protected Cubicle newInstance() {
+		return new Cubicle();	
 	}
 	
 }

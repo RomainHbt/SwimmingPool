@@ -15,7 +15,7 @@ public class Basket implements Resource
 	 * @generated
 	 */
 	public Basket(){
-		super();
+		
 	}
 
 	/**
@@ -26,8 +26,7 @@ public class Basket implements Resource
 	 */
 	
 	public String description() {
-		// TODO implement me
-		return "";	
+		return "A basket";	
 	}
 }
 

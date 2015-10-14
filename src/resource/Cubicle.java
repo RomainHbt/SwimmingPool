@@ -26,8 +26,7 @@ public class Cubicle implements Resource
 	 */
 	
 	public String description() {
-		// TODO implement me
-		return "";	
+		return "A cubicle";	
 	}
 	
 }

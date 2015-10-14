@@ -8,7 +8,7 @@ import resource.Basket;
  * @generated
  */
 
-public class BasketPool extends ResourcePool
+public class BasketPool extends ResourcePool<Basket>
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -26,8 +26,7 @@ public class BasketPool extends ResourcePool
 	 * @ordered
 	 */
 	
-	protected Basket getType() {
-		// TODO implement me
+	protected Basket newInstance() {
 		return null;	
 	}
 	

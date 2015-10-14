@@ -1,6 +1,7 @@
 package pool;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import resource.Resource;
 
@@ -42,7 +43,9 @@ public abstract class ResourcePool<R extends Resource>
 	
 	public ResourcePool(int length) {
 		super();
-		// TODO construct me	
+		for(int i = 0; i < length; i++) {
+			this.resources.add(this.newInstance());
+		}
 	}
 	
 	/**
@@ -52,7 +55,7 @@ public abstract class ResourcePool<R extends Resource>
 	 * @ordered
 	 */
 	
-	protected abstract R getType() ;
+	protected abstract R newInstance() ;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,8 +65,13 @@ public abstract class ResourcePool<R extends Resource>
 	 */
 	
 	public R provideResource() {
-		// TODO implement me
-		return null;	
+		if(this.resources.size() == 0)
+			throw new NoSuchElementException();
+		
+		R res = resources.remove(0);
+		this.provideRes.add(res);
+		
+		return res;	
 	}
 	
 	/**
@@ -73,8 +81,20 @@ public abstract class ResourcePool<R extends Resource>
 	 * @ordered
 	 */
 	
-	public void freeResource(R r) {
-		// TODO implement me	
+	public void freeResource(R res) {
+		if(!this.provideRes.contains(res))
+			throw new IllegalArgumentException();
+		
+		provideRes.remove(res);
+		this.resources.add(res);
+	}
+	
+	public List<R> getResourceList() {
+		return this.resources;
+	}
+	
+	public List<R> getProvideResourceList() {
+		return this.provideRes;
 	}
 	
 }
