@@ -1,5 +1,8 @@
 package pool;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.NoSuchElementException;
 
 import org.junit.Before;
@@ -7,11 +10,9 @@ import org.junit.Test;
 
 import resource.Resource;
 
-import static org.junit.Assert.*;
-
 public abstract class TestResourcePool {
 	
-	private ResourcePool<?> pool;
+	protected ResourcePool<?> pool;
 	
 	@Before
 	public void init() {
@@ -42,30 +43,13 @@ public abstract class TestResourcePool {
 		assertEquals(10, this.pool.getResourceList().size());
 		assertEquals(0, this.pool.getProvideResourceList().size());
 		
-		Resource res = this.pool.provideResource();
-		assertTrue(res instanceof MockResource);
+		this.pool.provideResource();
 		assertEquals(9, this.pool.getResourceList().size());
 		assertEquals(1, this.pool.getProvideResourceList().size());
 		
-		res = this.pool.provideResource();
-		assertTrue(res instanceof MockResource);
+		this.pool.provideResource();
 		assertEquals(8, this.pool.getResourceList().size());
 		assertEquals(2, this.pool.getProvideResourceList().size());
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void testFreeResourceWhenResourceNotFromPool() {
-		Resource res = new MockResourceFailure();
-		this.pool.provideResource();
-		this.pool.freeResource(res);
-	}
-	
-	@Test
-	public void testFreeResource() {
-		Resource res = this.pool.provideResource();
-		this.pool.freeResource(res);
-		assertEquals(10, this.pool.getResourceList().size());
-		assertEquals(0, this.pool.getProvideResourceList().size());
 	}
 
 	
@@ -75,15 +59,6 @@ public abstract class TestResourcePool {
 		@Override
 		public String description() {			
 			return "1";
-		}
-		
-	}
-	
-	private class MockResourceFailure implements Resource {
-
-		@Override
-		public String description() {
-			return null;
 		}
 		
 	}

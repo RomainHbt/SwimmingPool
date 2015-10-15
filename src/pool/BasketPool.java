@@ -27,7 +27,7 @@ public class BasketPool extends ResourcePool<Basket>
 	 */
 	
 	protected Basket newInstance() {
-		return null;	
+		return new Basket();	
 	}
 	
 }

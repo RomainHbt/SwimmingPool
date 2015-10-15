@@ -1,5 +1,6 @@
 package pool;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -43,6 +44,8 @@ public abstract class ResourcePool<R extends Resource>
 	
 	public ResourcePool(int length) {
 		super();
+		this.resources = new LinkedList<R>();
+		this.provideRes = new LinkedList<R>();
 		for(int i = 0; i < length; i++) {
 			this.resources.add(this.newInstance());
 		}
