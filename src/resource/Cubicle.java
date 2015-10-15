@@ -2,29 +2,23 @@ package resource;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * 
+ * Class who defined a Cubicle resource
+ * @author dubois hembert
+ *
  */
-
 public class Cubicle implements Resource
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * The constructor of a new cubicle
 	 */
 	public Cubicle(){
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * @see resource.Resource.description()
 	 */
-	
 	public String description() {
 		return "A cubicle";	
 	}

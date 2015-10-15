@@ -2,29 +2,23 @@ package resource;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class to manage the Basket resources
+ * 
+ * @author dubois hembert
+ *
  */
-
 public class Basket implements Resource
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * The constructor of a new Basket
 	 */
 	public Basket(){
 		
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * @see Resource.description();
 	 */
-	
 	public String description() {
 		return "A basket";	
 	}

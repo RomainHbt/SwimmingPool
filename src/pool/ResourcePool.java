@@ -9,39 +9,30 @@ import resource.Resource;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * This class manage a pool of resource of type R
+ * 
+ * @author dubois hembert
+ *
+ * @param <R> The type of the object extends of resource to use
  */
 
 public abstract class ResourcePool<R extends Resource>
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * The list of the resource available
 	 */
-	
 	protected List<R> resources;
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * The list of the resource not available
 	 */
-	
 	protected List<R> provideRes;
 	
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * The constructor of a ResourcePool
+	 * @param length The size capacity of this resource pool
 	 */
-	
 	public ResourcePool(int length) {
 		super();
 		this.resources = new LinkedList<R>();
@@ -52,21 +43,16 @@ public abstract class ResourcePool<R extends Resource>
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Factory method to create an instance of a new object extends of Resource
+	 * @return A new instace of an object extends of Resource
 	 */
-	
 	protected abstract R newInstance() ;
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Take one resource of this resource pool and passed this resource in status not available
+	 * @return The resource taken
+	 * @exception NoSuchElementException if the list of the resource available is empty
 	 */
-	
 	public R provideResource() {
 		if(this.resources.size() == 0)
 			throw new NoSuchElementException();
@@ -78,12 +64,10 @@ public abstract class ResourcePool<R extends Resource>
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Return a resource on the list of resource available and remove this resource on the list of resources not available
+	 * @param res The resource to return
+	 * @exception IllegalArgumentException if the resource is not valid
 	 */
-	
 	public void freeResource(R res) {
 		if(!this.provideRes.contains(res))
 			throw new IllegalArgumentException();
@@ -92,10 +76,18 @@ public abstract class ResourcePool<R extends Resource>
 		this.resources.add(res);
 	}
 	
+	/**
+	 * Get the list of the resources available
+	 * @return the list of the resources available
+	 */
 	public List<R> getResourceList() {
 		return this.resources;
 	}
 	
+	/**
+	 * Get the list of the resources not available
+	 * @return the list of the resources not available
+	 */
 	public List<R> getProvideResourceList() {
 		return this.provideRes;
 	}

@@ -1,19 +1,16 @@
 package resource;
 
 
-
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Interface who defined the pattern of all resources, resources are in pool
+ * @author dubois hembert
+ *
  */
 public  interface Resource 
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Get the description of this resource
+	 * @return the description of this resource
 	 */
 	
 	public String description() ;

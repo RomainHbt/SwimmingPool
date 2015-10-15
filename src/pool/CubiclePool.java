@@ -3,29 +3,24 @@ import resource.Cubicle;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class to manage a cubicle pool
+ * 
+ * @author dubois hembert
+ *
  */
-
 public class CubiclePool extends ResourcePool<Cubicle>
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * Constructor of a new CubiclePool
+	 * @param length the size of this pool
 	 */
 	public CubiclePool(int length){
 		super(length);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * @see ResourcePool.newInstance()
 	 */
-	
 	protected Cubicle newInstance() {
 		return new Cubicle();	
 	}

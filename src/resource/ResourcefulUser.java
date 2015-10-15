@@ -35,8 +35,7 @@ public class ResourcefulUser<R extends Resource>
 	 */
 	
 	public R getResource() {
-		// TODO implement me
-		return null;	
+		return this.resource;	
 	}
 	
 	/**
@@ -46,8 +45,8 @@ public class ResourcefulUser<R extends Resource>
 	 * @ordered
 	 */
 	
-	public void setResource(Resource resource) {
-		// TODO implement me	
+	public void setResource(R resource) {
+		this.resource = resource;	
 	}
 	
 	/**
@@ -58,7 +57,7 @@ public class ResourcefulUser<R extends Resource>
 	 */
 	
 	public void resetResource() {
-		// TODO implement me	
+		this.resource = null;	
 	}
 	
 }
