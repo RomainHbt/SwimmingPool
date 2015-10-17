@@ -4,11 +4,10 @@ import pool.CubiclePool;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class to manage the swimmers
+ * @author dubois hembert
+ *
  */
-
 public class Swimmer
 {
 	
@@ -19,6 +18,15 @@ public class Swimmer
 	private int bathTime;
 	private int dressTime;
 	
+	/**
+	 * Constructor of a new swimmer
+	 * @param name the name of this swimmer
+	 * @param bA the basket pool of this swimmer
+	 * @param cA the cubicle pool of this swimmer
+	 * @param undressTime the undress time of this swimmer
+	 * @param bathTime the bath time of this swimmer
+	 * @param dressTime the dress time of this swimmer
+	 */
 	public Swimmer(String name, BasketPool bA, CubiclePool cA, int undressTime, int bathTime, int dressTime) {
 		this.name = name;
 		this.basketAdministrator = bA;
@@ -26,6 +34,54 @@ public class Swimmer
 		this.undressTime = undressTime;
 		this.bathTime = bathTime;
 		this.dressTime = dressTime;
+	}
+	
+	/**
+	 * Get the name of this swimmer
+	 * @return the name of this swimmer
+	 */
+	public String getName() {
+		return this.name;
+	}
+	
+	/**
+	 * Get the basket pool of this swimmer
+	 * @return the basket pool of this swimmer
+	 */
+	public BasketPool getBasketAdministrator() {
+		return this.basketAdministrator;
+	}
+	
+	/**
+	 * Get the cubicle pool of this swimmer
+	 * @return the cubicle pool of this swimmer
+	 */
+	public CubiclePool getCubicleAdministrator() {
+		return this.cubicleAdministrator;
+	}
+	
+	/**
+	 * Get the undress time of this swimmer
+	 * @return the undress time of this swimmer
+	 */
+	public int getUndressTime() {
+		return this.undressTime;
+	}
+	
+	/**
+	 * Get the bath time of this swimmer
+	 * @return the bath time of this swimmer
+	 */
+	public int getBathTime() {
+		return this.bathTime;
+	}
+	
+	/**
+	 * Get the dress time of this swimmer
+	 * @return the dress time of this swimmer
+	 */
+	public int getDressTime() {
+		return this.dressTime;
 	}
 	
 }
