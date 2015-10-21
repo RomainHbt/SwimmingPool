@@ -32,7 +32,6 @@ public class Pool
 			try {
 				s.doStep();
 			} catch (ActionFinishedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

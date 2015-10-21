@@ -1,5 +1,7 @@
 package action;
 
+import resource.ResourcefulUser;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,8 +16,8 @@ public class TakeResourceAction extends ForseeableAction
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public TakeResourceAction(int timeToEnd){
-		super(timeToEnd);
+	public TakeResourceAction(){
+		super(1);
 	}
 
 }
