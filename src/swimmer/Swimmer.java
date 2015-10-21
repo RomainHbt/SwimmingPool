@@ -1,6 +1,8 @@
 package swimmer;
+import exceptions.ActionFinishedException;
 import pool.BasketPool;
 import pool.CubiclePool;
+import action.Action;
 
 
 /**
@@ -8,7 +10,7 @@ import pool.CubiclePool;
  * @author dubois hembert
  *
  */
-public class Swimmer
+public class Swimmer extends Action
 {
 	
 	private String name;
@@ -82,6 +84,17 @@ public class Swimmer
 	 */
 	public int getDressTime() {
 		return this.dressTime;
+	}
+
+	@Override
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public void doStep() throws ActionFinishedException {
+		super.doStep();
 	}
 	
 }
