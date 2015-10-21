@@ -6,8 +6,8 @@ import resource.ResourcefulUser;
 
 public class ResourceAction extends ForseeableAction {
 
-	private ResourcePool<?> pool;
-	private ResourcefulUser<?> resourceful;
+	protected ResourcePool<?> pool;
+	protected ResourcefulUser<?> resourceful;
 	
 	public ResourceAction(ResourcePool<?> pool, ResourcefulUser<?> resourceful) {
 		super(1);
