@@ -4,6 +4,7 @@ import pool.CubiclePool;
 import resource.Basket;
 import resource.Cubicle;
 import resource.ResourcefulUser;
+import action.ForseeableAction;
 import action.FreeResourceAction;
 import action.SequentialScheduler;
 import action.TakeResourceAction;
@@ -48,14 +49,15 @@ public class Swimmer extends SequentialScheduler
 		this.basket = new ResourcefulUser<>();
 		this.cubicle = new ResourcefulUser<>();
 		
-		this.addAction(new TakeResourceAction(this.basketAdministrator, this.basket));
-		this.addAction(new TakeResourceAction(this.cubicleAdministrator, this.cubicle));
-		// Temps deshabillage
+		this.addAction(new TakeResourceAction<Basket>(this.basketAdministrator, this.basket));
+		this.addAction(new TakeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
+		this.addAction(new ForseeableAction(this.undressTime));
 		this.addAction(new FreeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		//Temps nage
-		this.addAction(new TakeResourceAction(this.cubicleAdministrator, this.cubicle));
-		//Temps habillage
-		this.addAction(new FreeResourceAction(this.cubicleAdministrator, this.cubicle));
+		this.addAction(new ForseeableAction(this.bathTime));
+		this.addAction(new TakeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
+		this.addAction(new ForseeableAction(this.dressTime));
+		this.addAction(new FreeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
+		this.addAction(new FreeResourceAction<>(this.basketAdministrator, this.basket));
 		
 	}
 	
