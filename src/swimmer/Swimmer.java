@@ -1,8 +1,12 @@
 package swimmer;
-import exceptions.ActionFinishedException;
 import pool.BasketPool;
 import pool.CubiclePool;
-import action.Action;
+import resource.Basket;
+import resource.Cubicle;
+import resource.ResourcefulUser;
+import action.FreeResourceAction;
+import action.SequentialScheduler;
+import action.TakeResourceAction;
 
 
 /**
@@ -10,7 +14,7 @@ import action.Action;
  * @author dubois hembert
  *
  */
-public class Swimmer extends Action
+public class Swimmer extends SequentialScheduler
 {
 	
 	private String name;
@@ -19,6 +23,9 @@ public class Swimmer extends Action
 	private int undressTime;
 	private int bathTime;
 	private int dressTime;
+	
+	private ResourcefulUser<Basket> basket;
+	private ResourcefulUser<Cubicle> cubicle;
 	
 	/**
 	 * Constructor of a new swimmer
@@ -37,6 +44,19 @@ public class Swimmer extends Action
 		this.undressTime = undressTime;
 		this.bathTime = bathTime;
 		this.dressTime = dressTime;
+		
+		this.basket = new ResourcefulUser<>();
+		this.cubicle = new ResourcefulUser<>();
+		
+		this.addAction(new TakeResourceAction(this.basketAdministrator, this.basket));
+		this.addAction(new TakeResourceAction(this.cubicleAdministrator, this.cubicle));
+		// Temps deshabillage
+		this.addAction(new FreeResourceAction(this.cubicleAdministrator, this.cubicle));
+		
+		this.addAction(new TakeResourceAction(this.cubicleAdministrator, this.cubicle));
+		
+		this.addAction(new FreeResourceAction(this.cubicleAdministrator, this.cubicle));
+		
 	}
 	
 	/**
@@ -85,26 +105,6 @@ public class Swimmer extends Action
 	 */
 	public int getDressTime() {
 		return this.dressTime;
-	}
-
-	@Override
-	public boolean isFinished() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	@Override
-	public void doStep() throws ActionFinishedException {
-		super.doStep();
-		System.out.println(this.name + "'s turn");
-		
-		String resultAction = "success";
-		try {
-			this.basketAdministrator.provideResource();			
-		} catch(Exception e) {
-			resultAction = "failded";
-		}
-		System.out.println(this.name + " triying to take resource from pool basket... " + resultAction);
 	}
 	
 }
