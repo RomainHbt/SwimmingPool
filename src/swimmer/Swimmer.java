@@ -30,6 +30,7 @@ public class Swimmer extends Action
 	 * @param dressTime the dress time of this swimmer
 	 */
 	public Swimmer(String name, BasketPool bA, CubiclePool cA, int undressTime, int bathTime, int dressTime) {
+		super();
 		this.name = name;
 		this.basketAdministrator = bA;
 		this.cubicleAdministrator = cA;
@@ -95,6 +96,15 @@ public class Swimmer extends Action
 	@Override
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
+		System.out.println(this.name + "'s turn");
+		
+		String resultAction = "success";
+		try {
+			this.basketAdministrator.provideResource();			
+		} catch(Exception e) {
+			resultAction = "failded";
+		}
+		System.out.println(this.name + " triying to take resource from pool basket... " + resultAction);
 	}
 	
 }

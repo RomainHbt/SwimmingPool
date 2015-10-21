@@ -15,7 +15,7 @@ import action.FairScheduler;
 
 public class Pool
 {
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		BasketPool baskets = new BasketPool(6);
 		CubiclePool cubicles = new CubiclePool(3);
 		FairScheduler s = new FairScheduler();
