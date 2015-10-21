@@ -1,5 +1,6 @@
 package action;
 
+import pool.ResourcePool;
 import resource.ResourcefulUser;
 
 
@@ -9,16 +10,17 @@ import resource.ResourcefulUser;
  * @generated
  */
 
-public class TakeResourceAction extends ForseeableAction
-{
+public class TakeResourceAction extends ResourceAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public TakeResourceAction(){
-		super(1);
+	public TakeResourceAction(ResourcePool<?> pool, ResourcefulUser<?> resourceful){
+		super(pool, resourceful);
 	}
+	
+	
 
 }
 
