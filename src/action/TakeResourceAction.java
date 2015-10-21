@@ -1,6 +1,8 @@
 package action;
 
+import exceptions.ActionFinishedException;
 import pool.ResourcePool;
+import resource.Resource;
 import resource.ResourcefulUser;
 
 
@@ -10,17 +12,25 @@ import resource.ResourcefulUser;
  * @generated
  */
 
-public class TakeResourceAction extends ResourceAction {
+public class TakeResourceAction<R extends Resource> extends ResourceAction<R> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public TakeResourceAction(ResourcePool<?> pool, ResourcefulUser<?> resourceful){
+	public TakeResourceAction(ResourcePool<R> pool, ResourcefulUser<R> resourceful){
 		super(pool, resourceful);
 	}
 	
-	
+	@Override
+	public void doStep() throws ActionFinishedException{
+		// TODO : A corriger !
+		R r = this.pool.provideResource();
+		if(r != null){
+			this.resourceful.setResource(r);
+			super.doStep();
+		}
+	}
 
 }
 
