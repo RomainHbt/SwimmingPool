@@ -19,12 +19,17 @@ public class FreeResourceAction<R extends Resource> extends ResourceAction<R>
 	}
 	
 	@Override
+	public boolean isFinished() {
+		return this.resourceful.getResource() == null;
+	}
+	
+	@Override
 	public void doStep() throws ActionFinishedException {
+		super.doStep();
 		R res = this.resourceful.getResource();
 		this.pool.freeResource(res);
 		this.resourceful.resetResource();
-		
-		super.doStep();
+		System.out.println(this.resourceful.getSwimmer().getName() + " freeing resource from pool " + this.pool);
 	}
 }
 

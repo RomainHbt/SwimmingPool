@@ -1,4 +1,5 @@
 package swimmer;
+import exceptions.ActionFinishedException;
 import pool.BasketPool;
 import pool.CubiclePool;
 import resource.Basket;
@@ -7,6 +8,7 @@ import resource.ResourcefulUser;
 import action.ForseeableAction;
 import action.FreeResourceAction;
 import action.SequentialScheduler;
+import action.SwimmerForseeableAction;
 import action.TakeResourceAction;
 
 
@@ -46,19 +48,25 @@ public class Swimmer extends SequentialScheduler
 		this.bathTime = bathTime;
 		this.dressTime = dressTime;
 		
-		this.basket = new ResourcefulUser<>();
-		this.cubicle = new ResourcefulUser<>();
+		this.basket = new ResourcefulUser<Basket>(this);
+		this.cubicle = new ResourcefulUser<Cubicle>(this);
 		
 		this.addAction(new TakeResourceAction<Basket>(this.basketAdministrator, this.basket));
 		this.addAction(new TakeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new ForseeableAction(this.undressTime));
+		this.addAction(new SwimmerForseeableAction(this.undressTime, "undressing"));
 		this.addAction(new FreeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new ForseeableAction(this.bathTime));
+		this.addAction(new SwimmerForseeableAction(this.bathTime, "swimming"));
 		this.addAction(new TakeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new ForseeableAction(this.dressTime));
+		this.addAction(new SwimmerForseeableAction(this.dressTime, "dressing"));
 		this.addAction(new FreeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new FreeResourceAction<>(this.basketAdministrator, this.basket));
+		this.addAction(new FreeResourceAction<Basket>(this.basketAdministrator, this.basket));
 		
+	}
+	
+	@Override
+	public void doStep() throws ActionFinishedException {
+		System.out.println(this.name + "'s turn");
+		super.doStep();
 	}
 	
 	/**

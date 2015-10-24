@@ -20,7 +20,7 @@ public class Basket implements Resource
 	 * @see Resource.description();
 	 */
 	public String description() {
-		return "A basket";	
+		return "basket";	
 	}
 }
 

@@ -26,5 +26,9 @@ public class BasketPool extends ResourcePool<Basket>
 		return new Basket();	
 	}
 	
+	public String toString() {
+		return "basket";
+	}
+	
 }
 

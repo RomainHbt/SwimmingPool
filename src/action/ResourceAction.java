@@ -5,7 +5,7 @@ import pool.ResourcePool;
 import resource.Resource;
 import resource.ResourcefulUser;
 
-public class ResourceAction<R extends Resource> extends Action {
+public abstract class ResourceAction<R extends Resource> extends Action {
 
 	protected ResourcePool<R> pool;
 	protected ResourcefulUser<R> resourceful;
@@ -19,12 +19,6 @@ public class ResourceAction<R extends Resource> extends Action {
 	@Override
 	public void doStep() throws ActionFinishedException{
 		super.doStep();
-	}
-
-	@Override
-	public boolean isFinished() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

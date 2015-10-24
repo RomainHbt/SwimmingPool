@@ -1,5 +1,7 @@
 package action;
 
+import java.util.NoSuchElementException;
+
 import exceptions.ActionFinishedException;
 import pool.ResourcePool;
 import resource.Resource;
@@ -23,13 +25,22 @@ public class TakeResourceAction<R extends Resource> extends ResourceAction<R> {
 	}
 	
 	@Override
+	public boolean isFinished() {
+		return this.resourceful.getResource() != null;
+	}
+	
+	@Override
 	public void doStep() throws ActionFinishedException{
-		// TODO : A corriger !
-		R r = this.pool.provideResource();
-		if(r != null){
+		super.doStep();
+		String result = "";
+		try {
+			R r = this.pool.provideResource();
 			this.resourceful.setResource(r);
-			super.doStep();
+			result = "success";
+		} catch(NoSuchElementException e) {
+			result = "failed";
 		}
+		System.out.println(this.resourceful.getSwimmer().getName() + " trying to take resource from pool " + this.pool + "... " + result);
 	}
 
 }

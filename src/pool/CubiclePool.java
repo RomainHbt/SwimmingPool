@@ -25,5 +25,9 @@ public class CubiclePool extends ResourcePool<Cubicle>
 		return new Cubicle();	
 	}
 	
+	public String toString() {
+		return "cubicle";
+	}
+	
 }
 

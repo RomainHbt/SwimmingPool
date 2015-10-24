@@ -69,8 +69,9 @@ public abstract class ResourcePool<R extends Resource>
 	 * @exception IllegalArgumentException if the resource is not valid
 	 */
 	public void freeResource(R res) {
-		if(!this.provideRes.contains(res))
+		if(!this.provideRes.contains(res)) {
 			throw new IllegalArgumentException();
+		}
 		
 		provideRes.remove(res);
 		this.resources.add(res);
@@ -91,6 +92,5 @@ public abstract class ResourcePool<R extends Resource>
 	public List<R> getProvideResourceList() {
 		return this.provideRes;
 	}
-	
 }
 

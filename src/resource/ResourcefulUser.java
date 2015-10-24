@@ -1,5 +1,7 @@
 package resource;
 
+import swimmer.Swimmer;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -17,14 +19,15 @@ public class ResourcefulUser<R extends Resource>
 	 */
 	
 	protected R resource;
+	protected Swimmer swimmer;
 	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public ResourcefulUser(){
-		super();
+	public ResourcefulUser(Swimmer swimmer){
+		this.swimmer = swimmer;
 	}
 
 	/**
@@ -58,6 +61,10 @@ public class ResourcefulUser<R extends Resource>
 	
 	public void resetResource() {
 		this.resource = null;	
+	}
+	
+	public Swimmer getSwimmer() {
+		return this.swimmer;
 	}
 	
 }
