@@ -9,26 +9,34 @@ import resource.ResourcefulUser;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class to manage the taking resource action
+ * @author dubois hembert
+ *
+ * @param <R> The resource type to taking
  */
 
 public class TakeResourceAction<R extends Resource> extends ResourceAction<R> {
+	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * Constructor of a new take resource action
+	 * @param pool the pool to taking this resource
+	 * @param resourceful the resource user helper
 	 */
 	public TakeResourceAction(ResourcePool<R> pool, ResourcefulUser<R> resourceful){
 		super(pool, resourceful);
 	}
 	
+	/**
+	 * @see Action#isFinished()
+	 */
 	@Override
 	public boolean isFinished() {
 		return this.resourceful.getResource() != null;
 	}
 	
+	/**
+	 * @see Action#doStep()
+	 */
 	@Override
 	public void doStep() throws ActionFinishedException{
 		super.doStep();

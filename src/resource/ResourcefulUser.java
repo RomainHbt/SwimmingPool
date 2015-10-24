@@ -4,65 +4,53 @@ import swimmer.Swimmer;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class to manage the resource use by a swimmer
+ * @author dubois hembert
+ *
+ * @param <R> Type of the resource use in this helper
  */
 
 public class ResourcefulUser<R extends Resource>
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
 	
 	protected R resource;
 	protected Swimmer swimmer;
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
+	 * Constructor of a new resource helper
+	 * @param swimmer the swimmer using this the resource
 	 */
 	public ResourcefulUser(Swimmer swimmer){
 		this.swimmer = swimmer;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Get the resource of this helper
+	 * @return the resource of this helper
 	 */
-	
 	public R getResource() {
 		return this.resource;	
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Set the resource of this helper
+	 * @param resource the resource who change the resource of this helper
 	 */
-	
 	public void setResource(R resource) {
 		this.resource = resource;	
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * The resource of this helper become null
 	 */
-	
 	public void resetResource() {
 		this.resource = null;	
 	}
 	
+	/**
+	 * Get the swimmer of this helper
+	 * @return the swimmer of this helper
+	 */
 	public Swimmer getSwimmer() {
 		return this.swimmer;
 	}

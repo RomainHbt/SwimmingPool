@@ -1,15 +1,14 @@
 package swimmer;
-import exceptions.ActionFinishedException;
 import pool.BasketPool;
 import pool.CubiclePool;
 import resource.Basket;
 import resource.Cubicle;
 import resource.ResourcefulUser;
-import action.ForseeableAction;
 import action.FreeResourceAction;
 import action.SequentialScheduler;
 import action.SwimmerForseeableAction;
 import action.TakeResourceAction;
+import exceptions.ActionFinishedException;
 
 
 /**
@@ -63,6 +62,9 @@ public class Swimmer extends SequentialScheduler
 		
 	}
 	
+	/**
+	 * @see SequentialScheduler#doStep()
+	 */
 	@Override
 	public void doStep() throws ActionFinishedException {
 		System.out.println(this.name + "'s turn");
