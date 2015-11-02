@@ -52,11 +52,11 @@ public class Swimmer extends SequentialScheduler
 		
 		this.addAction(new TakeResourceAction<Basket>(this.basketAdministrator, this.basket));
 		this.addAction(new TakeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new SwimmerForseeableAction(this.undressTime, "undressing"));
+		this.addAction(new SwimmerForseeableAction(this.undressTime, name+" undressing"));
 		this.addAction(new FreeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new SwimmerForseeableAction(this.bathTime, "swimming"));
+		this.addAction(new SwimmerForseeableAction(this.bathTime, name+" swimming"));
 		this.addAction(new TakeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
-		this.addAction(new SwimmerForseeableAction(this.dressTime, "dressing"));
+		this.addAction(new SwimmerForseeableAction(this.dressTime, name+" dressing"));
 		this.addAction(new FreeResourceAction<Cubicle>(this.cubicleAdministrator, this.cubicle));
 		this.addAction(new FreeResourceAction<Basket>(this.basketAdministrator, this.basket));
 		
