@@ -8,9 +8,8 @@ import action.FairScheduler;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Main class
+ * @author dubois hembert
  */
 
 public class Pool

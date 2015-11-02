@@ -20,7 +20,7 @@ public class BasketPool extends ResourcePool<Basket>
 	}
 
 	/**
-	 * @see ResourcePool.newInstance()
+	 * @see pool.ResourcePool#newInstance()
 	 */
 	protected Basket newInstance() {
 		return new Basket();	

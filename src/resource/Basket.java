@@ -17,7 +17,7 @@ public class Basket implements Resource
 	}
 
 	/**
-	 * @see Resource.description();
+	 * @see resource.Resource#description()
 	 */
 	public String description() {
 		return "basket";	

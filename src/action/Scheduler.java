@@ -7,29 +7,14 @@ import exceptions.ActionFinishedException;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * General class for schedulers
+ * @author dubois hembert
  */
 
 public class Scheduler extends Action
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	protected List<Action> actions;
-	
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
+	protected List<Action> actions;
 	
 	public Scheduler() {
 		super();
@@ -37,12 +22,8 @@ public class Scheduler extends Action
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * @see action.Action#doStep()
 	 */
-	
 	public void doStep() throws ActionFinishedException{
 		super.doStep();
 		if(this.actions.isEmpty()){
@@ -50,46 +31,22 @@ public class Scheduler extends Action
 		}
 	}
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public boolean isReady() {
 		return super.isReady();	
 	}
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public boolean isInProgress() {
 		return super.isInProgress();
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
 	
 	public boolean isFinished() {
 		return this.actions.isEmpty();
 	}
 	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
+	 * Add an action in the scheduler
+	 * @param a Action added
 	 */
-	
 	public void addAction(Action a) {
 		this.actions.add(a);
 	}

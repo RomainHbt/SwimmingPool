@@ -4,36 +4,16 @@ import exceptions.ActionFinishedException;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class for action which need a remaining time
+ * @author dubois hembert
  */
 
 public class ForseeableAction extends Action
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
 	
 	private int remainingTime;
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	private int totalTime;
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
 	public ForseeableAction(int timeToEnd){
 		super();
 		this.totalTime = timeToEnd;
@@ -48,6 +28,9 @@ public class ForseeableAction extends Action
 		return totalTime;
 	}
 
+	/**
+	 * Do a step for the action
+	 */
 	public void doStep() throws ActionFinishedException{
 		super.doStep();
 		if(this.remainingTime == 0)

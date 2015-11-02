@@ -4,30 +4,20 @@ import exceptions.ActionFinishedException;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class for sequential schedulers
+ * @author dubois hembert
  */
 
 public class SequentialScheduler extends Scheduler
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
+
 	public SequentialScheduler(){
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @throws ActionFinishedException 
-	 * @generated
-	 * @ordered
+	 * Do all step for each action, one action after another
 	 */
-	
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		Action toDo = this.actions.get(0);

@@ -19,7 +19,7 @@ public class CubiclePool extends ResourcePool<Cubicle>
 	}
 
 	/**
-	 * @see ResourcePool.newInstance()
+	 * @see pool.ResourcePool#newInstance()
 	 */
 	protected Cubicle newInstance() {
 		return new Cubicle();	

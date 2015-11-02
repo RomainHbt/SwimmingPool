@@ -4,9 +4,8 @@ import exceptions.ActionFinishedException;
 
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
+ * Class for fair schedulers
+ * @author dubois hembert
  */
 
 public class FairScheduler extends Scheduler
@@ -14,24 +13,14 @@ public class FairScheduler extends Scheduler
 	
 	private int index;
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
 	public FairScheduler(){
 		super();
 		this.index = 0;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @throws ActionFinishedException 
-	 * @generated
-	 * @ordered
+	 * Do a step for each action, one after another
 	 */
-	
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		Action toDo = this.actions.get(index);

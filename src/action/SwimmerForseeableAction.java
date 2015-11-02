@@ -2,6 +2,10 @@ package action;
 
 import exceptions.ActionFinishedException;
 
+/**
+ * Class for printing action for swimmers (dress, undress and swimming)
+ * @author dubois hembert
+ */
 
 public class SwimmerForseeableAction extends ForseeableAction {
 
@@ -12,6 +16,9 @@ public class SwimmerForseeableAction extends ForseeableAction {
 		this.action = action;
 	}
 	
+	/**
+	 * Print the action of swimmer
+	 */
 	public void doStep() throws ActionFinishedException{
 		super.doStep();
 		System.out.println(action);

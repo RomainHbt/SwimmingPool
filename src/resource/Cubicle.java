@@ -17,7 +17,7 @@ public class Cubicle implements Resource
 	}
 
 	/**
-	 * @see resource.Resource.description()
+	 * @see resource.Resource#description()
 	 */
 	public String description() {
 		return "cubicle";	
